@@ -1,6 +1,6 @@
 # Flickr React App
 ```
-## Run npm start
+Run npm start
 ```
 ## Created with Create-React-app
 
