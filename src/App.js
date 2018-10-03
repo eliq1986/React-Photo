@@ -1,9 +1,13 @@
+//NPM Modules
 import React, { Component } from 'react';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import axios from 'axios';
+
+
+//Custom Modules
 import './App.css';
 import Gallery from './components/gallery';
 import Header from './components/header';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import axios from 'axios';
 import NotFound from './components/NotFound';
 import searchTags from './tags';
 
@@ -14,6 +18,8 @@ import API_KEY from "./.config.js";
 
 class App extends Component {
 
+
+//initializes state
 state = {
   initialPhotos: [],
   catPhotos: [],
@@ -25,7 +31,7 @@ state = {
 
 
 
-
+//initial search
 componentDidMount() {
   axios.all([
     axios.get(searchTags.yosemite),
@@ -48,11 +54,11 @@ componentDidMount() {
 
 }
 
+// SEARCH FUNCTION
 searchRequest = (searchQuery) => {
-  this.setState({isLoading: true, searchPhotos: []}, ()=> {
+  this.setState({isLoading: true}, ()=> {
     axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${API_KEY}&tags=${searchQuery}&per_page=24&page=1&format=json&nojsoncallback=1`)
    .then( ({data}) => {
-
        this.setState({
          isLoading: false,
          searchPhotos: data.photos.photo
@@ -63,40 +69,23 @@ searchRequest = (searchQuery) => {
      });
   })
 
-  // this.setState({isLoading: true })
-  // axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${API_KEY}&tags=${searchQuery}&per_page=24&page=1&format=json&nojsoncallback=1`)
-  // .then( ({data}) => {
-  //
-  //     this.setState({
-  //       isLoading: false,
-  //       searchPhotos: data.photos.photo
-  //     })
-  //   })
-  //   .catch(function (error) {
-  //     console.log(error);
-  //   });
+
 }
 
 
-
-
-
-
-  render() {
+render() {
     return (
 <BrowserRouter >
   <div className="App">
     <Header   searchRequest={this.searchRequest}/>
     <Switch>
       <Route exact path="/" render={()=> <Gallery isLoading={this.state.isLoading} photos={this.state.initialPhotos}/>}/>
-      <Route exact path="/cats" render={()=> <Gallery  isLoading={this.state.isLoading}  photos={this.state.catPhotos}/>}/>
-      <Route exact path="/dogs" render={()=> <Gallery  isLoading={this.state.isLoading} photos={this.state.dogPhotos}/>}/>
-      <Route exact path="/computers" render={()=> <Gallery isLoading={this.state.isLoading} photos={this.state.computerPhotos}/>}/>
-
-      <Route path="/search" render={()=> <Gallery  isLoading={this.state.isLoading} photos={this.state.searchPhotos}/>}/>
-
+      <Route  path="/cats" render={()=> <Gallery  isLoading={this.state.isLoading}  photos={this.state.catPhotos}/>}/>
+      <Route  path="/dogs" render={()=> <Gallery  isLoading={this.state.isLoading} photos={this.state.dogPhotos}/>}/>
+      <Route  path="/computers" render={()=> <Gallery isLoading={this.state.isLoading} photos={this.state.computerPhotos}/>}/>
+      <Route  path="/search" render={()=> <Gallery  isLoading={this.state.isLoading} photos={this.state.searchPhotos}/>}/>
       <Route component={NotFound} />
-      </Switch >
+    </Switch>
     </div>
   </BrowserRouter>
     );

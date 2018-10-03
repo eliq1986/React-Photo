@@ -26,3 +26,24 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+html {
+  background: linear-gradient(#f5f7fa,#c3cfe2);
+  height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+#camera {
+  transform-origin: 50% 50%;
+  transition: transform .6s ease-out;
+
+}
+#camera:hover {
+  transform: rotate(15deg);
+}
