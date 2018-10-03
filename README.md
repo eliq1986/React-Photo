@@ -9,13 +9,13 @@
 3. Components
 4. State
 5. Routing
-6. Flickr API 
+6. Flickr API
 
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/6277603/46419813-8b323780-c6e3-11e8-88ef-ea8939a5d0a8.png">
+<img src="https://user-images.githubusercontent.com/6277603/46420293-90dc4d00-c6e4-11e8-9e3e-5f02f048c511.png">
 </p>
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/6277603/46419810-8a99a100-c6e3-11e8-810e-343a37c64d93.png">
+<img src="https://user-images.githubusercontent.com/6277603/46420294-90dc4d00-c6e4-11e8-907b-9e932dd8e97a.png">
 </p>
