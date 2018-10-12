@@ -1,4 +1,5 @@
 # Flickr React App
+# FLICKR API KEY NEEDED PRIOR TO RUNNING NOM START
 ```
 Run npm start
 ```
