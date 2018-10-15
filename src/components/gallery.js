@@ -12,7 +12,7 @@ const override = css `
 
 `;
 
-const Gallery = ({ photos, isLoading }) => {
+const Gallery = ({ photos, isLoading, searchQuery }) => {
 
   const flickrPhotos = photos;
   const arrayOfPhotos = flickrPhotos.map(photo => <GalleryItem farm={photo.farm} id={photo.id} key={photo.id} server={photo.server} secret={photo.secret} alt={photo.title}/>)
@@ -43,7 +43,7 @@ const Gallery = ({ photos, isLoading }) => {
   const noResults = (
     <li className="not-found">
       <h3>No Results Found</h3>
-      <p>You search did not return any results. Please try again.</p>
+      <p>Unfortunately, your seacrch didn't render anything.</p>
     </li>
   );
 

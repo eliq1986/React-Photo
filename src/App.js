@@ -23,9 +23,10 @@ class App extends Component {
 state = {
   initialPhotos: [],
   catPhotos: [],
-  computerPhotos:[],
+  coffeePhotos:[],
   dogPhotos:[],
   searchPhotos: [],
+  searchQuery: null,
   isLoading: false
 }
 
@@ -37,18 +38,18 @@ componentDidMount() {
     axios.get(searchTags.yosemite),
     axios.get(searchTags.cats),
     axios.get(searchTags.dogs),
-    axios.get(searchTags.computers)
-  ]).then(axios.spread((yosemite, cats, dogs, computers) => {
+    axios.get(searchTags.coffee)
+  ]).then(axios.spread((yosemite, cats, dogs, coffee) => {
     const initialPhotos = yosemite.data.photos.photo;
     const catPhotos = cats.data.photos.photo;
     const dogPhotos = dogs.data.photos.photo;
-    const computerPhotos = computers.data.photos.photo;
+    const coffeePhotos = coffee.data.photos.photo;
 
      this.setState({
         initialPhotos,
         catPhotos,
         dogPhotos,
-        computerPhotos
+        coffeePhotos
      })
   }));
 
@@ -61,7 +62,8 @@ searchRequest = (searchQuery) => {
    .then( ({data}) => {
        this.setState({
          isLoading: false,
-         searchPhotos: data.photos.photo
+         searchPhotos: data.photos.photo,
+         searchQuery: searchQuery
        })
      })
      .catch(function (error) {
@@ -77,17 +79,17 @@ render() {
     return (
 <BrowserRouter >
   <div className="App">
-    <Header   searchRequest={this.searchRequest}/>
+    <Header  searchRequest={this.searchRequest}/>
     <Switch>
-      <Route exact path="/" render={()=> <Gallery isLoading={this.state.isLoading} photos={this.state.initialPhotos}/>}/>
+      <Route exact path="/" render={()=> <Gallery  isLoading={this.state.isLoading} photos={this.state.initialPhotos}/>}/>
       <Route  path="/cats" render={()=> <Gallery  isLoading={this.state.isLoading}  photos={this.state.catPhotos}/>}/>
       <Route  path="/dogs" render={()=> <Gallery  isLoading={this.state.isLoading} photos={this.state.dogPhotos}/>}/>
-      <Route  path="/computers" render={()=> <Gallery isLoading={this.state.isLoading} photos={this.state.computerPhotos}/>}/>
-      <Route  path="/search" render={()=> <Gallery  isLoading={this.state.isLoading} photos={this.state.searchPhotos}/>}/>
+      <Route  path="/coffee" render={()=> <Gallery isLoading={this.state.isLoading} photos={this.state.coffeePhotos}/>}/>
+      <Route  path="/search" render={()=> <Gallery searchQuery={this.state.searchQuery} isLoading={this.state.isLoading} photos={this.state.searchPhotos}/>}/>
       <Route component={NotFound} />
     </Switch>
-    </div>
-  </BrowserRouter>
+  </div>
+</BrowserRouter>
     );
   }
 }

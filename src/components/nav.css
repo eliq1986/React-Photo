@@ -1,0 +1,11 @@
+.hoverAnimation {
+  /*letter-spacing: -5px;*/
+  -webkit-transition: all .8s ease;
+  -moz-transition: all .8s ease;
+  -o-transition: all .8s ease;
+  transition: all .8s ease;
+  cursor: pointer;
+}
+.hoverAnimation:hover {
+  letter-spacing: 3px;
+}
