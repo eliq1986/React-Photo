@@ -2,7 +2,7 @@
 
 ## Run npm start
 
-## FLICKR API KEY needed prior to running npm start
+## Flickr API KEY needed prior to running npm start
 ```
 Run npm start
 ```
