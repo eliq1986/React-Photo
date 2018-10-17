@@ -1,14 +1,11 @@
 # Flickr React App
-<<<<<<< HEAD
 
 ## Run npm start
 
-=======
 ## FLICKR API KEY needed prior to running npm start
 ```
 Run npm start
 ```
->>>>>>> a666d7f83e619af4ad5e281d7746923aa26f58fd
 ## Created with Create-React-app
 
 ### Skills Learned
