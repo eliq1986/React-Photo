@@ -16,7 +16,7 @@ import API_KEY from "./.config.js";
 
 
 
-class App extends Component {
+export default class App extends Component {
 
 
 //initializes state
@@ -81,9 +81,9 @@ render() {
   <div className="App">
     <Header  searchRequest={this.searchRequest}/>
     <Switch>
-      <Route exact path="/" render={()=> <Gallery  isLoading={this.state.isLoading} photos={this.state.initialPhotos}/>}/>
-      <Route  path="/cats" render={()=> <Gallery  isLoading={this.state.isLoading}  photos={this.state.catPhotos}/>}/>
-      <Route  path="/dogs" render={()=> <Gallery  isLoading={this.state.isLoading} photos={this.state.dogPhotos}/>}/>
+      <Route exact path="/"  render={()=> <Gallery  isLoading={this.state.isLoading} photos={this.state.initialPhotos}/>}/>
+      <Route  path="/cats"   render={()=> <Gallery  isLoading={this.state.isLoading}  photos={this.state.catPhotos}/>}/>
+      <Route  path="/dogs"   render={()=> <Gallery  isLoading={this.state.isLoading} photos={this.state.dogPhotos}/>}/>
       <Route  path="/coffee" render={()=> <Gallery isLoading={this.state.isLoading} photos={this.state.coffeePhotos}/>}/>
       <Route  path="/search" render={()=> <Gallery searchQuery={this.state.searchQuery} isLoading={this.state.isLoading} photos={this.state.searchPhotos}/>}/>
       <Route component={NotFound} />
@@ -98,6 +98,3 @@ render() {
 if (module.hot) {
   module.hot.accept();
 }
-
-
-export default App;

@@ -1,9 +1,10 @@
 import React from 'react';
 import GalleryItem from './gallery-item';
-
+import NoResults from './no-results';
 import {css} from 'react-emotion';
 // First way to import
 import {ClipLoader} from 'react-spinners';
+
 
 const override = css `
     display: block;
@@ -11,6 +12,7 @@ const override = css `
     border-color: red;
 
 `;
+
 
 const Gallery = ({ photos, isLoading, searchQuery }) => {
 
@@ -29,9 +31,8 @@ const Gallery = ({ photos, isLoading, searchQuery }) => {
 );
 
 
-
 //loading spinner component
-  const loadingSpinner = (
+  const LoadingSpinner = (
     <div className='sweet-loading'>
       <ClipLoader className={override} sizeUnit={"px"} size={100} color={'#b76e79'} loading={isLoading}/>
     </div>
@@ -39,20 +40,12 @@ const Gallery = ({ photos, isLoading, searchQuery }) => {
 
 
 
-// no results component
-  const noResults = (
-    <li className="not-found">
-      <h3>No Results Found</h3>
-      <p>Unfortunately, your seacrch didn't render anything.</p>
-    </li>
-  );
-
 
 //checks if data received with loading indicator
   if (isLoading) {
-    return loadingSpinner;
+    return LoadingSpinner;
   } else if (!isLoading && photos.length < 1) {
-    return noResults;
+    return NoResults;
   } else {
     return photoContainer;
   }
