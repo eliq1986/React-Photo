@@ -2,8 +2,9 @@
 
 ## Run npm start
 
-## Flickr API KEY needed prior to running npm start
 ```
+## Flickr API KEY needed prior to running npm start
+
 Run npm start
 ```
 ## Created with Create-React-app
