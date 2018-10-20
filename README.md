@@ -18,9 +18,9 @@ Run npm start
 
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/6277603/46420293-90dc4d00-c6e4-11e8-9e3e-5f02f048c511.png">
+<img src="https://user-images.githubusercontent.com/6277603/47256372-25a8af80-d434-11e8-82c6-5472861f5616.png">
 </p>
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/6277603/46420294-90dc4d00-c6e4-11e8-907b-9e932dd8e97a.png">
+<img src="https://user-images.githubusercontent.com/6277603/47256373-25a8af80-d434-11e8-8ed4-f95ebadb9a33.png">
 </p>

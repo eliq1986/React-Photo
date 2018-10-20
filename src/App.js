@@ -8,7 +8,7 @@ import axios from 'axios';
 import './App.css';
 import Gallery from './components/gallery';
 import Header from './components/header';
-import NotFound from './components/NotFound';
+import NotFound from './components/not-found';
 import searchTags from './tags';
 
 // API KEY
