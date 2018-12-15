@@ -3,7 +3,32 @@
    font-size: 5em;
    font-weight: bolder;
    margin: .5em;
+   animation-name: moveInFromLeft;
+   animation-duration: 1.6s;
+   animation-timing-function: ease-out;
+  
 }
 #pink-title {
   color: #FF0084;
+}
+
+
+
+
+@keyframes moveInFromLeft {
+0% {
+   opacity: 0;
+   transform: translateX(-150px);
+
+}
+
+80% {
+  opacity: 1;
+  transform: translateX(20px);
+}
+
+100% {
+   opacity: 1;
+   transform: translateX(0);
+}
 }

@@ -1,11 +1,17 @@
-.hoverAnimation {
-  /*letter-spacing: -5px;*/
-  -webkit-transition: all .8s ease;
-  -moz-transition: all .8s ease;
-  -o-transition: all .8s ease;
-  transition: all .8s ease;
-  cursor: pointer;
+.animation {
+  box-shadow: 0 2px 5px gray;
+  transition: all .3s;
+  transition-timing-function: ease-in-out;
+
 }
-.hoverAnimation:hover {
-  letter-spacing: 3px;
+
+
+.animation:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 4px 7px gray;
+}
+
+.animation:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px gray;
 }
