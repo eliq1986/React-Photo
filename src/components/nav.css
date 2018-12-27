@@ -1,6 +1,5 @@
 .animation {
-  box-shadow: 0 2px 5px gray;
-  transition: all .3s;
+  transition: all .2s;
   transition-timing-function: ease-in-out;
 
 }
