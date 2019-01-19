@@ -12,7 +12,7 @@ const Header = ({ searchRequest }) => {
      <Form searchRequest={searchRequest}/>
      <Nav  />
    </div>
-     )
-     }
+   );
+  }
 
 export default Header;

@@ -1,7 +1,7 @@
 import React from 'react';
 import GalleryItem from './gallery-item';
 import NoResults from './no-results';
-import {css} from 'react-emotion';
+import { css}  from 'react-emotion';
 // First way to import
 import {ClipLoader} from 'react-spinners';
 
@@ -10,14 +10,22 @@ const override = css `
     display: block;
     margin: 0 auto;
     border-color: red;
-
 `;
 
 
 const Gallery = ({ photos, isLoading, searchQuery }) => {
 
   const flickrPhotos = photos;
-  const arrayOfPhotos = flickrPhotos.map(photo => <GalleryItem farm={photo.farm} id={photo.id} key={photo.id} server={photo.server} secret={photo.secret} alt={photo.title}/>)
+
+  const arrayOfPhotos = flickrPhotos.map(photo =>
+    <GalleryItem
+    farm={photo.farm}
+    id={photo.id}
+    key={photo.id}
+    server={photo.server}
+    secret={photo.secret}
+    alt={photo.title}
+    />)
 
 
   // photoContainer component

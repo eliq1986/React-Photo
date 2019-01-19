@@ -7,9 +7,9 @@ const Nav = () => {
     return (
       <nav className="main-nav">
         <ul>
-          <li class="animation"><NavLink to='/cats'>Cats</NavLink></li>
-          <li class="animation"><NavLink to='/dogs'>Dogs</NavLink></li>
-          <li class="animation"><NavLink to='/coffee'>Coffee</NavLink></li>
+          <li className="animation"><NavLink to='/cats'>Cats</NavLink></li>
+          <li className="animation"><NavLink to='/dogs'>Dogs</NavLink></li>
+          <li className="animation"><NavLink to='/coffee'>Coffee</NavLink></li>
         </ul>
       </nav>
   );
