@@ -1,6 +1,6 @@
 //NPM Modules
 import React, { Component } from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 
 
@@ -45,18 +45,18 @@ componentDidMount() {
     const dogPhotos = dogs.data.photos.photo;
     const coffeePhotos = coffee.data.photos.photo;
 
-     this.setState({
+     this.setState(prevState => ({
         initialPhotos,
         catPhotos,
         dogPhotos,
         coffeePhotos
-     })
+     }));
   }));
 
 }
 
 // SEARCH FUNCTION
-searchRequest = (searchQuery) => {
+searchRequest = searchQuery => {
 
   this.setState({isLoading: true}, ()=> {
     axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${API_KEY}&tags=${searchQuery}&per_page=24&page=1&format=json&nojsoncallback=1`)
